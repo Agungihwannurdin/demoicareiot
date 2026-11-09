@@ -1,0 +1,267 @@
+/* iCare Visual Refresh v3 — purely presentational, does not change API or database. */
+:root {
+  --green:#0c8d47;
+  --green-dark:#075a36;
+  --green-light:#ecf8f0;
+  --bg:#f4f8f6;
+  --text:#19392c;
+  --muted:#779084;
+  --line:#e0ebe5;
+  --round:19px;
+  --shadow:0 10px 32px rgba(21,72,44,.065);
+}
+body{background:#f3f8f5;background-image:radial-gradient(circle at 90% 4%,rgba(180,239,192,.23),transparent 29%),radial-gradient(circle at 10% 96%,rgba(170,232,206,.14),transparent 40%)}
+button{transition:transform .18s ease,background-color .18s ease,box-shadow .2s ease,color .18s ease}
+button:active:not(:disabled){transform:scale(.98)}
+button:focus-visible,a:focus-visible{outline:3px solid #6dda9c;outline-offset:3px}
+.card{border:1px solid #e3eee8;background:rgba(255,255,255,.98);box-shadow:0 7px 27px rgba(11,77,40,.043);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.card:hover{box-shadow:0 16px 36px rgba(17,81,43,.09);border-color:#d2e8da}
+.grad-button{border-radius:12px;background:linear-gradient(120deg,#17ae61,#07883f 58%,#056d37);box-shadow:0 7px 17px rgba(10,145,71,.18);font-weight:750;letter-spacing:.01em}
+.grad-button:hover{box-shadow:0 12px 23px rgba(10,145,71,.24);transform:translateY(-2px)}
+.outline-button{border-radius:12px;border-color:#d5e7db;box-shadow:0 2px 6px rgba(11,58,30,.025)}
+.outline-button:hover{border-color:#9fd7b0;transform:translateY(-1px)}
+.brand-word{color:#11633a;letter-spacing:-1.7px}.brand .ico{color:#14b45d}.brand-sub{color:#66836d;letter-spacing:.045em}
+/* Welcome & Login */
+.welcome-layout,.login-layout{background:#f8faf8}
+.welcome-visual,.login-scene{box-shadow:inset -18px 0 40px rgba(14,62,22,.06)}
+.welcome-visual:after,.login-scene:after{background:linear-gradient(180deg,rgba(255,255,255,.02) 20%,transparent 44%,rgba(1,42,20,.66))}
+.welcome-top,.scene-brand{box-shadow:0 12px 40px rgba(7,69,37,.12);border:1px solid rgba(255,255,255,.84);background:rgba(255,255,255,.91)}
+.welcome-tagline h1{font-size:clamp(35px,3.5vw,57px);letter-spacing:-2.2px;font-weight:850}
+.welcome-tagline p{line-height:1.78}
+.welcome-panel,.login-side{background:radial-gradient(ellipse at 90% 10%,#e2f9eb,transparent 51%),radial-gradient(ellipse at 10% 90%,#ecfff3,transparent 40%),white}
+.welcome-inner .eyebrow{display:inline-flex;background:#e8f8ed;border:1px solid #d0edda;border-radius:100px;padding:8px 12px;letter-spacing:.105em}
+.welcome-inner h2{font-size:clamp(29px,3vw,43px);letter-spacing:-1.85px;color:#153a2a}
+.role-card{border-radius:19px;padding:23px;box-shadow:0 11px 27px rgba(12,87,51,.055);border:1px solid #e2ece5}
+.role-card:hover{transform:translateY(-4px);border-color:#86d5a1;box-shadow:0 18px 44px rgba(9,91,48,.11)}
+.role-icon{border-radius:17px;background:linear-gradient(140deg,#ebfff0,#c9f1d7)}
+.role-icon.admin{background:linear-gradient(140deg,#eaf5ff,#d7eaff)}
+.role-arrow{transition:transform .2s ease}.role-card:hover .role-arrow{transform:translateX(5px)}
+.login-card{border:1px solid #e0eee5;border-radius:24px;padding:38px;box-shadow:0 22px 70px rgba(13,81,43,.11)}
+.login-card:has(.login-error){animation:icare-shake .4s ease}
+.login-heading h1{font-size:26px;color:#143b29}
+.input-wrap{border-radius:12px;min-height:50px;transition:border-color .18s ease,box-shadow .18s ease}
+.input-wrap:focus-within{box-shadow:0 0 0 4px #d9f7e4;border-color:#31b966}
+.login-card .grad-button{min-height:49px}
+/* Dashboard frame */
+.dashboard{grid-template-columns:258px minmax(0,1fr)}
+.sidebar{background:linear-gradient(160deg,#063a29,#075237 67%,#06683c);border:0;color:white;padding:25px 18px;box-shadow:10px 0 35px rgba(17,81,43,.05)}
+.sidebar-brand{padding:11px 12px 21px;border-bottom:1px solid #ffffff1c}
+.sidebar .brand-word{color:#fff}.sidebar .brand-sub{color:#b3ddc5}.sidebar .brand .ico{color:#8beca5}
+.sidebar-section{color:#9ec3b0;font-size:10px;letter-spacing:.16em}
+.sidebar .side-link{color:#cce9d8;border:1px solid transparent;font-size:13px;min-height:47px;border-radius:12px;padding-left:16px}
+.sidebar .side-link:hover{background:#ffffff12;border-color:#ffffff14;color:#fff}
+.sidebar .side-link.active{background:linear-gradient(110deg,#30b96a,#15934f);border:1px solid #ffffff3e;color:#fff;box-shadow:0 7px 18px #01291745}
+.sidebar-bottom{border-top:1px solid #ffffff24}.sidebar-user strong{color:white}.sidebar-user small{color:#b7d7c5}
+.sidebar .avatar{background:#ffffff22;color:#dcffea;border:1px solid #ffffff28}
+.sidebar .sidebar-bottom .side-link:hover{background:#a9181826}
+.dashboard-main{max-width:none;padding:28px clamp(20px,3.2vw,57px) 52px}
+.topbar{margin-bottom:24px;padding:2px 0 0}
+.topbar-welcome small{letter-spacing:.1em;text-transform:uppercase;color:#769c86;font-weight:700}
+.topbar-welcome h2{font-size:clamp(21px,2.1vw,29px);font-weight:800;letter-spacing:-1.15px;color:#123d2b}
+.icon-button,.top-avatar{width:44px;height:44px;border-radius:14px}
+.icon-button{color:#1b8a4f;border-color:#dcebe2;box-shadow:0 3px 14px #116d3b0b}
+.icon-button:hover{background:#e9f9ef;transform:rotate(-8deg)}
+.top-avatar{background:linear-gradient(135deg,#dff9e9,#bcf0d1);border:1px solid #cde8d7}
+.header-strip{position:relative;isolation:isolate;overflow:hidden;border-radius:21px;background:linear-gradient(112deg,#064b34,#087345 58%,#10ac61);padding:23px 29px;margin-bottom:19px;box-shadow:0 12px 28px rgba(10,99,55,.17)}
+.header-strip:before{content:"";position:absolute;right:8%;top:-75px;width:290px;height:220px;border:37px solid rgba(255,255,255,.08);border-radius:50%;z-index:-1}
+.header-strip:after{content:"";position:absolute;right:-70px;bottom:-120px;width:280px;height:220px;background:radial-gradient(circle,rgba(171,252,193,.23),transparent 70%);z-index:-1}
+.header-title .ico{color:#a8ffc9;width:37px;height:37px}
+.header-title strong{font-size:19px;letter-spacing:-.45px}
+.header-title span{letter-spacing:.018em}
+.network-pill{backdrop-filter:blur(9px);background:rgba(255,255,255,.16);border:1px solid #ffffff45;border-radius:15px;padding:10px 15px}
+.network-pill.is-online{background:#ffffffed;color:#096138;border-color:#fff}
+.network-pill.is-offline{background:#fff1f1;color:#b03438;border-color:#ffd6d8}
+/* Metrics */
+.metrics{gap:14px;margin:0 0 16px}
+.metric{min-height:162px;border-radius:19px;padding:21px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.metric:hover{transform:translateY(-3px)}
+.metric-icon{width:48px;height:48px;display:grid;place-items:center;background:#eaf9ef;border-radius:15px;color:#0e9e50;margin-bottom:1px}
+.metric-icon .ico{margin:0!important;color:inherit!important}
+.metric:nth-child(2) .metric-icon{background:#e9f5ff;color:#2389bc}
+.metric:nth-child(3) .metric-icon{background:#eaf8ee;color:#11a653}
+.metric:nth-child(4) .metric-icon{background:#fff6e5;color:#c78b19}
+.metric:nth-child(5) .metric-icon{background:#eaf6ff;color:#248bd0}
+.metric-name{color:#698372;font-weight:720;letter-spacing:.01em}
+.metric-value{color:#163d2c;letter-spacing:-.65px}
+.metric-value.weather{color:#157344;letter-spacing:0}
+.metric-offline-hint{display:inline-block;border-radius:20px;padding:4px 9px;background:#fff2f0;color:#ae5a51;font-size:10px;margin-top:0}
+/* Pump, system status, history */
+.status-card{border-radius:18px;padding:21px 22px;min-height:95px}
+.status-left>.ico{color:#179d55;background:#e8f9ef;width:42px;height:42px;border-radius:13px;padding:9px}
+.status-left strong{font-size:14px;color:#264734}
+.status-left small,.status-left p{color:#799083;line-height:1.48}
+.switch{box-shadow:0 2px 9px rgba(13,65,36,.12)}
+.switch.on{box-shadow:0 5px 15px #1099503e}
+.system-strip{border-radius:17px;border:1px solid #d7ecde;background:linear-gradient(110deg,#eefbf1,#f8fdfa)}
+.pill.green{background:#dff7e9;color:#087c41}.pill.red{background:#fff0f0;color:#c04747}
+.chart-grid{gap:14px}.chart-card{border-radius:19px;padding:21px 23px}
+.chart-heading{color:#284a35;font-weight:750}.chart-labels{margin-top:8px}.chart-svg{filter:drop-shadow(0 2px 4px rgba(8,120,52,.04))}
+/* Admin */
+.admin-summary{gap:15px}.stat-card{min-height:129px;padding:23px 21px;border-radius:18px}
+.stat-card strong{font-size:31px;color:#204331}
+.stat-icon{width:52px;height:52px;border-radius:15px}
+.toolbar{margin-bottom:18px}.toolbar h3,.section-heading h3{font-weight:800;color:#193f2d}
+.search-wrap{height:45px;border-radius:12px;transition:border-color .15s ease,box-shadow .15s ease}
+.search-wrap:focus-within{border-color:#42ba76;box-shadow:0 0 0 3px #dcf6e6}
+.admin-table th{background:#f0f8f3;padding:16px 18px}
+.admin-table td{padding:16px 18px}.admin-table tr:hover td{background:#f9fdfb}
+.admin-table-wrap{border-radius:17px}
+.user-circle{background:linear-gradient(135deg,#daffe8,#bcebd0);border-radius:12px}
+.table-action{border-radius:10px;padding:9px}.table-action:hover{transform:translateY(-2px)}
+.admin-panel{border-radius:19px}
+/* Modern custom popups: forms, confirmation, notifications */
+.modal-backdrop,.icare-confirm-backdrop{position:fixed;inset:0;background:rgba(4,27,19,.59);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:100;padding:22px;animation:icare-fade .2s ease both}
+.modal,.icare-confirm{background:#fff;border:1px solid rgba(255,255,255,.8);box-shadow:0 25px 110px rgba(3,28,14,.28),0 6px 28px rgba(3,28,14,.11);border-radius:26px;animation:icare-pop .28s cubic-bezier(.2,.9,.23,1.16) both}
+.modal{max-width:520px;padding:29px;max-height:calc(100dvh - 40px);overflow:auto;scrollbar-width:thin}
+.modal-header{border-bottom:1px solid #e9f0eb;padding-bottom:22px;margin-bottom:22px;justify-content:flex-start}
+.modal-head-icon{flex:none;background:linear-gradient(140deg,#e4fbed,#d7f5e3);color:#148449;padding:12px;width:49px;height:49px;border-radius:16px;display:grid;place-items:center}
+.modal-head-icon .ico{width:25px;height:25px}
+.modal-head-text{flex:1;min-width:0}.modal-head-text small{font-size:9px;letter-spacing:.15em;font-weight:850;color:#18824b}.modal-head-text h3{font-size:20px;letter-spacing:-.55px;margin:3px 0 0;color:#1c4230}
+.modal-header .close-btn{margin-left:auto;flex:none}
+.close-btn{width:36px;height:36px;background:#f1f6f3;border-radius:12px;color:#668575;transition:.18s}
+.close-btn:hover{background:#feecec;color:#bb353c;transform:rotate(90deg)}
+.form-label{color:#456554;font-size:12px;letter-spacing:.01em}
+.form-input{height:48px;border-radius:12px;border-color:#d8e8df;transition:box-shadow .18s,border-color .18s}
+.form-input:focus{border-color:#35b769;box-shadow:0 0 0 4px #e1f9e9}
+.form-group{margin-bottom:18px}
+.form-actions{border-top:1px solid #eef3ef;padding-top:20px;margin-top:24px;gap:11px}
+.form-actions .grad-button,.form-actions .outline-button{min-height:44px}
+.notice{background:#f0f9f3;border:1px solid #dcefe2;border-radius:13px}
+.icare-confirm-backdrop{z-index:210}
+.icare-confirm{width:min(100%,445px);padding:35px 32px;text-align:center}
+.icare-confirm-mark{display:grid;place-items:center;margin:0 auto 17px;width:69px;height:69px;border-radius:22px;background:linear-gradient(140deg,#e9f9ef,#c9efda);color:#12924f}
+.icare-confirm.is-danger .icare-confirm-mark{background:#fff0ed;color:#be4848}
+.icare-confirm h3{margin:0 0 12px;letter-spacing:-.7px;color:#18412d;font-size:23px}
+.icare-confirm p{font-size:14px;line-height:1.7;color:#71897a;margin:0 0 28px}
+.icare-confirm-actions{display:flex;gap:11px;justify-content:center}
+.icare-confirm-actions button{min-width:142px;flex:1;min-height:46px}
+.icare-confirm.is-danger .grad-button{background:linear-gradient(120deg,#e9705c,#c54141);box-shadow:0 8px 19px rgba(183,40,40,.17)}
+.icare-toast-stack{position:fixed;right:24px;bottom:22px;z-index:250;width:min(398px,calc(100vw - 32px));display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.icare-toast{--toast-color:#188455;--toast-bg:#e9f8ef;position:relative;overflow:hidden;pointer-events:auto;display:flex;align-items:flex-start;gap:12px;background:#fff;border-radius:17px;padding:16px 38px 18px 15px;border:1px solid #e4eee8;box-shadow:0 14px 42px rgba(5,48,26,.14);animation:icare-toast-in .26s cubic-bezier(.2,.9,.23,1.1) both}
+.icare-toast.dismiss{animation:icare-toast-out .21s ease forwards}
+.icare-toast.toast-error{--toast-color:#be4447;--toast-bg:#fff0f0}
+.icare-toast.toast-warning{--toast-color:#b78522;--toast-bg:#fff7e6}
+.icare-toast.toast-info{--toast-color:#2475bb;--toast-bg:#ebf5ff}
+.icare-toast-icon{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:var(--toast-color);background:var(--toast-bg)}
+.icare-toast-copy{min-width:0}.icare-toast-copy strong{font-size:13px;color:#263d31;display:block;margin:2px 0 4px}
+.icare-toast-copy p{font-size:12px;line-height:1.55;color:#657f6e;overflow-wrap:anywhere;margin:0}
+.icare-toast-close{position:absolute;right:9px;top:11px;border:0;color:#849d8d;background:transparent;width:28px;height:28px;padding:5px}
+.icare-toast-close:hover{background:#f2f5f3;border-radius:8px}
+.icare-toast-progress{position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--toast-color);transform-origin:left;animation:icare-progress 4.6s linear forwards}
+.icare-toast.toast-error .icare-toast-progress{animation-duration:6.5s}.icare-toast-progress.paused{animation-play-state:paused}
+@keyframes icare-fade{from{opacity:0}to{opacity:1}}
+@keyframes icare-pop{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes icare-toast-in{from{opacity:0;transform:translateX(24px) scale(.97)}to{opacity:1;transform:translateX(0) scale(1)}}
+@keyframes icare-toast-out{to{opacity:0;transform:translateX(22px) scale(.97)}}
+@keyframes icare-progress{to{transform:scaleX(0)}}
+@keyframes icare-shake{15%,55%{transform:translateX(-5px)}35%,75%{transform:translateX(5px)}100%{transform:translateX(0)}}
+@media(max-width:1150px){.dashboard{grid-template-columns:221px minmax(0,1fr)}.dashboard-main{padding:24px 22px 50px}.metric{padding:17px 8px;min-height:149px}}
+@media(max-width:780px){
+  .welcome-visual{min-height:270px}.welcome-panel{padding:28px 20px 46px}.login-card{padding:25px}
+  .dashboard{display:block}.dashboard-main{padding:16px 15px calc(94px + env(safe-area-inset-bottom))}
+  .topbar-welcome h2{font-size:20px}.header-strip{padding:17px 16px;border-radius:18px}
+  .header-title strong{font-size:15px}.header-title .ico{width:30px;height:30px}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .metric{min-height:130px;padding:15px 7px;border-radius:16px}
+  .metric:nth-child(5){grid-column:1/-1;flex-direction:row;justify-content:flex-start;gap:16px;padding:14px 19px;min-height:82px;flex-wrap:wrap}
+  .metric:nth-child(5) .metric-name{min-height:0}.metric:nth-child(5) .metric-value{margin-left:auto}
+  .metric-icon{width:40px;height:40px;border-radius:12px}.metric-icon .ico{width:24px;height:24px}
+  .metric-name{min-height:0;font-size:10.5px}.metric-value{font-size:19px}
+  .status-card{padding:17px;border-radius:16px}.chart-card{padding:16px}
+  .admin-summary{grid-template-columns:repeat(2,1fr);gap:9px}.stat-card{padding:15px;min-height:105px}.stat-icon{width:43px;height:43px}
+  .mobile-nav{height:76px;padding:7px 9px max(7px,env(safe-area-inset-bottom));border-radius:18px 18px 0 0;box-shadow:0 -12px 25px #08452718;background:linear-gradient(110deg,#075437,#0b7e47)}
+  .mobile-item.active{background:rgba(255,255,255,.18);box-shadow:inset 0 0 0 1px #ffffff30}
+  .icare-toast-stack{bottom:89px;right:14px;left:14px;width:auto}
+  .modal{padding:22px;max-height:calc(100dvh - 30px)}
+  .icare-confirm{padding:28px 23px}.icare-confirm-actions button{min-width:0}
+}
+@media(max-width:390px){.dashboard-main{padding:12px 10px 95px}.metric{min-height:120px}.metrics{gap:8px}.topbar-welcome h2{font-size:18px}.header-strip{padding:13px}.role-card{padding:16px}.modal{padding:18px}.form-grid{grid-template-columns:1fr}.icare-confirm-actions{flex-direction:column-reverse}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* iCare V4 — realistic agriculture photo on role-selection and login pages.
+   Backend, authentication, API, dashboard and responsive JavaScript are unchanged. */
+.welcome-layout{grid-template-columns:minmax(0,53%) minmax(390px,47%)}
+.login-layout{grid-template-columns:minmax(0,53%) minmax(390px,47%)}
+.welcome-visual,.login-scene{
+  background-color:#14593e;
+  background-image:url('../img/icare-hero-field-v4.webp');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center 42%;
+  isolation:isolate;
+  box-shadow:inset -12px 0 35px rgba(12,53,32,.07);
+}
+.welcome-visual::after,.login-scene::after{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,44,32,.10) 0%,transparent 30%,rgba(1,31,20,.25) 58%,rgba(0,29,16,.89) 100%);
+}
+.welcome-top,.scene-brand{
+  z-index:2;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.75);
+  box-shadow:0 18px 48px rgba(5,43,26,.16);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-radius:20px;
+}
+.welcome-top{top:clamp(25px,5vh,55px);left:clamp(24px,6vw,82px)}
+.welcome-tagline{
+  z-index:2;left:clamp(24px,6vw,82px);right:clamp(24px,6vw,82px);
+  bottom:clamp(36px,6vh,75px);
+  color:white;text-shadow:0 3px 18px rgba(0,16,9,.30);
+}
+.welcome-tagline h1{font-size:clamp(32px,3.4vw,53px);max-width:570px;line-height:1.12;letter-spacing:-1.7px;margin:0 0 14px;font-weight:850}
+.welcome-tagline p{max-width:450px;font-size:clamp(13px,1.15vw,16px);line-height:1.65;color:#f4fff6}
+.scene-brand{top:clamp(25px,5vh,55px);left:clamp(24px,6vw,82px)}
+.scene-label{z-index:2;bottom:clamp(35px,6vh,70px);left:clamp(24px,6vw,82px);right:20px;font-size:clamp(24px,2.4vw,34px);font-weight:800;color:white;text-shadow:0 3px 17px rgba(0,19,13,.7)}
+.welcome-panel,.login-side{background:radial-gradient(ellipse at 100% 0%,#eafaf0,transparent 56%),#fff}
+@media(min-width:781px) and (max-width:1080px){
+  .welcome-layout,.login-layout{grid-template-columns:minmax(0,49%) minmax(0,51%)}
+  .welcome-tagline h1{font-size:36px}
+  .welcome-panel,.login-side{padding-left:6%;padding-right:6%}
+}
+@media(max-width:780px){
+  .welcome-layout,.login-layout{display:block}
+  .welcome-visual{height:300px;min-height:300px;max-height:none;background-position:center 33%}
+  .login-scene{height:250px;min-height:250px;background-position:center 30%}
+  .welcome-visual::after,.login-scene::after{background:linear-gradient(180deg,rgba(1,48,27,.1),rgba(1,30,18,.02) 30%,rgba(0,34,17,.74) 100%)}
+  .welcome-top,.scene-brand{top:18px;left:20px;padding:9px 14px;border-radius:14px}
+  .welcome-top .brand-word,.scene-brand .brand-word{font-size:27px}
+  .welcome-tagline{left:22px;right:22px;bottom:22px}
+  .welcome-tagline h1{font-size:clamp(25px,6vw,34px);margin-bottom:7px;letter-spacing:-.8px}
+  .welcome-tagline p{font-size:12px;line-height:1.45;max-width:440px}
+  .scene-label{left:22px;bottom:20px;font-size:22px;line-height:1.18}
+  .welcome-panel{padding-top:30px}
+}
+@media(max-width:390px){
+  .welcome-visual{height:265px;min-height:265px;background-position:center 30%}
+  .login-scene{height:220px;min-height:220px;background-position:center 27%}
+  .welcome-tagline h1{font-size:25px}
+  .welcome-tagline p{font-size:11px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .welcome-tagline,.welcome-top,.scene-brand,.scene-label{animation:icare-v4-appear .65s ease-out both}
+  .welcome-tagline,.scene-label{animation-delay:.1s}
+  @keyframes icare-v4-appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+}
+
+/* iCare V5: tampilkan komposisi panel surya lebih lengkap pada foto potret
+   di area kiri layar desktop yang lebar. Layer depan menggunakan tinggi penuh;
+   latar belakang mempertahankan cover untuk mengisi sisi foto. */
+@media (min-width: 781px) {
+  .welcome-visual::before, .login-scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url('../img/icare-hero-field-v4.webp');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 16%, black 84%, transparent 100%);
+  }
+}
+/* Mobile: panel visual ringkas agar pilihan login langsung terlihat. */
+@media (max-width: 780px) {
+ .welcome-visual, .login-scene {background-position: center 30%;}
+}

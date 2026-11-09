@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1050" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6dc2f7"/><stop offset=".75" stop-color="#deefff"/><stop offset="1" stop-color="#fff5d5"/></linearGradient>
+ <linearGradient id="crop" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#a8db30"/><stop offset=".35" stop-color="#57b50a"/><stop offset="1" stop-color="#127f25"/></linearGradient>
+ <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#65c8ff"/><stop offset=".5" stop-color="#085399"/><stop offset="1" stop-color="#002d72"/></linearGradient>
+ <linearGradient id="box" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#bfcac2"/></linearGradient>
+ <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#003711" flood-opacity=".22"/></filter>
+</defs>
+<rect width="900" height="1050" fill="url(#sky)"/>
+<g fill="#fff" opacity=".88">
+ <path d="M55 186c3-27 40-38 58-17 12-32 67-36 84-7 25-5 44 7 48 24Z"/>
+ <path d="M470 114c6-31 42-41 64-26 18-29 55-28 72-4 33-9 59 7 62 30Z"/>
+ <path d="M630 226c5-25 36-32 52-17 20-30 65-28 81 1 28-8 48 4 53 16Z"/>
+</g>
+<path d="M0 462c80-46 145-50 213-18 93-75 164-75 268-16 79-67 155-70 238-15 57-23 100-26 181-2v163H0Z" fill="#8ab6a4"/>
+<path d="M0 510c77-20 155-23 244 1 76-38 139-38 223-5 93-37 167-33 255-4 61-15 106-12 178-1v98H0Z" fill="#4d9c4c"/>
+<path d="M0 544c200-24 444-23 900 0v506H0Z" fill="#59a93e"/>
+<path d="M-130 1050 435 548 479 548 1150 1050Z" fill="#584a25" opacity=".28"/>
+<g fill="url(#crop)">
+ <path d="M-175 1050 427 548 446 548 95 1050Z"/>
+ <path d="M8 1050 439 548 457 548 263 1050Z"/>
+ <path d="M229 1050 452 548 469 548 434 1050Z"/>
+ <path d="M452 1050 465 548 482 548 606 1050Z"/>
+ <path d="M673 1050 475 548 491 548 840 1050Z"/>
+ <path d="M855 1050 487 548 502 548 1073 1050Z"/>
+</g>
+<g fill="none" stroke="#e6f664" stroke-width="5" opacity=".63">
+ <path d="M-155 1050 435 548M12 1050 444 548M229 1050 457 548M450 1050 470 548M674 1050 482 548M850 1050 494 548"/>
+</g>
+<g stroke="#338725" stroke-width="2" opacity=".6">
+ <path d="M0 805h900M0 737h900M0 684h900M0 645h900M0 610h900M0 581h900"/>
+</g>
+<!-- solar-powered irrigation control station -->
+<g filter="url(#shadow)" transform="translate(612 300)">
+ <path d="M87 112h16v346H87z" fill="#4b585a"/>
+ <path d="M95 124 185-12" fill="none" stroke="#626e72" stroke-width="10"/>
+ <path d="M100 126 36 12" fill="none" stroke="#626e72" stroke-width="9"/>
+ <g transform="translate(14 -11) skewY(-12)">
+  <path d="M0 0h231l-43 127H-44z" fill="#dce9ed" stroke="#586c72" stroke-width="8"/>
+  <path d="M5 8h215l-38 108H-30z" fill="url(#panel)"/>
+  <g stroke="#97dafe" stroke-width="2" opacity=".72"><path d="m27 8-29 108m60-108-27 108m60-108-24 108m57-108-19 108m56-108-16 108m52-108-12 108"/><path d="M0 34h212M-9 60h211M-20 88h211"/></g>
+ </g>
+ <rect x="26" y="130" width="135" height="152" rx="10" fill="url(#box)" stroke="#8d9b92" stroke-width="4"/>
+ <path d="M84 155c-21-16-31-8-24 7 9 15 24 17 24 17s4-18 0-24Z" fill="#399f20"/><path d="M88 155c16-20 38-19 33 0-2 18-20 25-33 24Z" fill="#5fb72c"/><path d="M87 181v15" stroke="#278a2d" stroke-width="4"/>
+ <text x="94" y="219" text-anchor="middle" font-family="Arial,sans-serif" font-size="29" font-weight="bold" fill="#15612b">iCare</text>
+ <circle cx="143" cy="265" r="5" fill="#29a72f"/>
+</g>
+<path d="M0 955c177-79 277-49 413 13 144-74 282-93 487-42v124H0Z" fill="#52ca32"/>
+<path d="M0 1005c203-85 353-29 467 6 175-95 290-78 433-55v94H0Z" fill="#109b27"/>
+</svg>

@@ -1,0 +1,6 @@
+
+/* GitHub Pages demonstration banner: visible on every screen */
+.demo-bar{position:fixed;z-index:9999;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:10px 17px;border-radius:100px;background:#073c2d;color:white;font-size:12px;box-shadow:0 8px 30px #002b1e4d;max-width:calc(100vw - 22px);white-space:nowrap}
+.demo-bar b{color:#b8f7cf;letter-spacing:.06em}.demo-pulse{background:#6ee7a1;height:9px;width:9px;border-radius:50%;box-shadow:0 0 0 4px #6ee7a12b}.demo-bar span:last-child{overflow:hidden;text-overflow:ellipsis}
+.dashboard-main{padding-bottom:90px!important}.welcome-panel,.login-side{padding-bottom:50px}
+@media(max-width:600px){.demo-bar{font-size:10px;padding:8px 10px;gap:6px;bottom:70px}}
