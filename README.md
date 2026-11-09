@@ -13,8 +13,9 @@ Alternatif: `python -m http.server 8000` dari folder ini dan buka `http://localh
 
 ## Cara memakai
 
-- Klik Masuk sebagai Admin/Pengguna, lalu **MASUK DEMO**.
-- Tidak ada username/password yang perlu dimasukkan.
+- Pilih **Masuk sebagai Admin** atau **Masuk sebagai Pengguna**.
+- Untuk kedua jenis akun demo, gunakan **username: `admin`** dan **password: `admin`**. Tekan Enter atau klik tombol masuk.
+- Kredensial tersebut hanya pemeriksaan JavaScript dalam browser, **bukan autentikasi yang aman**. Jangan gunakan untuk aplikasi produksi.
 - Monitoring, grafik dan kontrol pompa merupakan simulasi di browser, bukan data live.
 - Admin dapat mencoba tambah/ubah/nonaktifkan pengguna dan tambah perangkat sementara; semua data kembali ke awal saat refresh.
 - Tombol ekspor CSV menghasilkan **data simulasi**.

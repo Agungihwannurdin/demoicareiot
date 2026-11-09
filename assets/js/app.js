@@ -30,7 +30,10 @@
     async function api(url, method = 'GET', data) {
         const path = url.split('?')[0];
         if (path === '/api/session') return { user: session, csrf: 'demo' };
-        if (path === '/api/login') return { user: { role: data.role, name: data.role === 'admin' ? 'Administrator Demo' : 'Pengguna Demo', username: data.role === 'admin' ? 'admin_demo' : 'pengguna_demo' }, csrf: 'demo' };
+        if (path === '/api/login') {
+            if (data.username !== 'admin' || data.password !== 'admin') throw new Error('Username atau password demo salah.');
+            return { user: { role: data.role, name: data.role === 'admin' ? 'Administrator Demo' : 'Pengguna Demo', username: 'admin' }, csrf: 'demo' };
+        }
         if (path === '/api/logout') return { csrf: 'demo' };
         if (path === '/api/devices' && method === 'GET') return { devices: demo.devices.map(d => ({...d, last_seen_at: new Date().toISOString().slice(0,19).replace('T',' ')})) };
         if (path === '/api/users') {
@@ -124,8 +127,13 @@
         <a href="#/welcome" class="back-link" data-page="welcome">${icon('arrow-left','sm')} Kembali ke pilihan akses</a><div class="login-card">
         <div class="login-heading">${icon(a?'shield':'user')}<h1>Demo ${a?'Admin':'Pengguna'}</h1></div>
         <p class="login-sub">Jelajahi tampilan dan fitur simulasi ${a?'pengelolaan akun serta perangkat':'monitoring, grafik, dan kontrol pompa'}.</p>
-        <div class="notice">MODE DEMO: tidak memerlukan username atau password. Jangan memasukkan kredensial akun sebenarnya.</div>
-        <button type="button" class="grad-button full" data-demo-login="${role}">${icon('log-in','sm')} MASUK DEMO ${a?'ADMIN':'PENGGUNA'}</button></div><div class="login-tail">iCare · Demonstrasi antarmuka tanpa koneksi server</div></div></section></main>`;
+        <div class="notice">MODE DEMO · Gunakan username <b>admin</b> dan password <b>admin</b>. Jangan gunakan password akun asli.</div>
+        ${loginError ? `<div class="login-error" role="alert">${esc(loginError)}</div>` : ''}
+        <form data-login-form="${role}">
+          <div class="field-row"><label class="field-label" for="username">Username</label><div class="input-wrap">${icon('user','sm')}<input id="username" name="username" type="text" autocomplete="username" placeholder="Masukkan username" required autofocus></div></div>
+          <div class="field-row"><label class="field-label" for="password">Password</label><div class="input-wrap">${icon('lock','sm')}<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required><button type="button" class="link-button" data-show-pass aria-label="Tampilkan atau sembunyikan password">${icon('eye','sm')}</button></div></div>
+          <button type="submit" class="grad-button full">${icon('log-in','sm')} MASUK ${a?'ADMIN':'PENGGUNA'}</button>
+        </form></div><div class="login-tail">iCare · Demonstrasi antarmuka tanpa koneksi server</div></div></section></main>`;
     }
     function menuItem(tab, label, ic, active) { return `<button class="side-link ${tab === active ? 'active' : ''}" data-nav="${tab}">${icon(ic)} ${label}</button>`; }
     function mobileMenu(items, active) { return `<nav class="mobile-nav" aria-label="Menu utama">${items.map(x => `<button class="mobile-item ${x.id === active ? 'active' : ''}" data-nav="${x.id}">${icon(x.icon)}<span>${x.label}</span></button>`).join('')}</nav>`; }
@@ -256,13 +264,6 @@
             e.preventDefault();
             navigate(pg.dataset.page);
             return;
-        }
-        const demoLogin = e.target.closest('[data-demo-login]');
-        if (demoLogin) {
-            const role = demoLogin.dataset.demoLogin;
-            session = {role, name: role === 'admin' ? 'Administrator Demo' : 'Pengguna Demo', username: role === 'admin' ? 'admin_demo' : 'pengguna_demo'};
-            adminTab = 'overview'; userTab = 'home';
-            await loadDashboard(); return;
         }
         if (e.target.closest('[data-show-pass]')) {
             const x = document.getElementById('password');
@@ -469,7 +470,7 @@
                 const r = await api('/api/login', 'POST', { role: f.dataset.loginForm, username: String(d.get('username') || ''), password: String(d.get('password') || '') });
                 csrf = r.csrf;
                 session = r.user;
-                adminTab = 'users';
+                adminTab = 'overview';
                 userTab = 'home';
                 await loadDashboard();
             }
